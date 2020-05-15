@@ -1,0 +1,122 @@
+/* Everything larger than 800px ///////////////////// */
+
+/* Header/Nav */
+nav a {
+  padding: 1rem;
+  justify-self: center;
+  color: var(--dark-color);
+  transition: all 200ms;
+}
+nav a:hover {
+  color: var(--light-color);
+  background-color: var(--pop-color);
+}
+
+.links__get-estimate {
+  grid-column: 3 / span 2;
+  color: var(--pop-color);
+}
+.links__get-estimate:hover {
+  color: var(--light-color);
+  background-color: var(--pop-color);
+}
+
+.links__contact {
+  justify-self: end;
+}
+
+/* Home */
+.home__container,
+.home__circle {
+  min-height: 750px;
+  max-height: 100vh;
+  height: 100vh;
+}
+
+.home__container {
+  background-image: url(/images/home.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.home__circle {
+  margin-top: 3rem;
+  background-color: white;
+  float: right;
+  width: 100%;
+  clip-path: ellipse(100% 125% at 150% 25%);
+}
+
+.home__circle img,
+.home__circle h1,
+.home__circle h3,
+.home__circle a {
+  display: block;
+  margin: 0 1rem 5vh auto;
+}
+
+.home__circle h1,
+.home__circle h3,
+.home__circle a {
+  text-align: right;
+}
+
+.home__circle img,
+.home__circle h1 {
+  width: 45%;
+}
+
+.home__circle h3 {
+  width: 30%;
+}
+
+.home__circle a {
+  width: max-content;
+}
+
+/* Services */
+
+.services {
+  height: 500px;
+  width: 75%;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  justify-items: center;
+  align-items: center;
+}
+
+.services__card {
+  height: 350px;
+  width: 250px;
+  box-shadow: var(--shadow);
+  transition: all 200ms;
+}
+
+.services__card:hover {
+  height: 400px;
+  width: 300px;
+}
+
+.services__card img {
+  display: block;
+  width: 75px;
+  margin: 15% auto;
+}
+
+.services__icon--camera {
+  height: 150px;
+  scale: 1.5;
+}
+
+.services__card li {
+  text-align: center;
+  margin: 1rem;
+}
+
+/* Contact */
+.inline-icon {
+  display: inline-block;
+  height: var(--body-size);
+  margin: 0 1rem;
+}

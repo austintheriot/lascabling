@@ -7,13 +7,13 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css" type="text/css" />
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
-    <!-- JS -->
-    <script src="scripts/script.js"></script>
     <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Source+Serif+Pro&display=swap"
       rel="stylesheet"
     />
+    <!-- JS -->
+    <script src="scripts/script.js" defer></script>
   </head>
   <body>
     <!-- Header /////////////////////////////////// -->
@@ -25,6 +25,11 @@
         <a href="#contact" class="links__contact">Contact</a>
       </nav>
     </header>
+    <div class="hamburger">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </div>
 
     <!-- Home Section /////////////////////////////////// -->
     <div class="home__container" id="home">
@@ -42,7 +47,11 @@
     <!-- Services /////////////////////////////////// -->
     <div class="services" id="info">
       <div class="services__card">
-        <img src="images/cable.svg" alt="cabling icon" />
+        <img
+          src="images/cable.svg"
+          alt="cabling icon"
+          class="services__icon--cable"
+        />
         <ul>
           <li>Fiber Optic Cabling</li>
           <li>Categroy Cabling</li>
@@ -50,7 +59,11 @@
         </ul>
       </div>
       <div class="services__card">
-        <img src="images/server.svg" alt="server icon" />
+        <img
+          src="images/server.svg"
+          alt="server icon"
+          class="services__icon--server"
+        />
         <ul>
           <li>Data Centers</li>
           <li>Communication Rooms</li>
@@ -73,30 +86,45 @@
 
     <!-- Photos /////////////////////////////////// -->
     <div class="photos">
-      <div class="photos__guarantee">
-        <h1>Lifetime guarantee on all new installations</h1>
+      <h1>Lifetime guarantee on all new installations</h1>
+      <div class="photos__container">
+        <img
+          src="images/work1.jpg"
+          alt="Example of previous work #1"
+          class="photos__photo1"
+        />
+        <img
+          src="images/work2.jpg"
+          alt="Example of previous work #2"
+          class="photos__photo2"
+        />
+        <img
+          src="images/work3.jpg"
+          alt="Example of previous work #3"
+          class="photos__photo3"
+        />
       </div>
       <a href="#" class="button">See More Photos</a>
-      <div class="photos__container">
-        <img src="" alt="Example of previous work #1" class="photos__photo1" />
-        <img src="" alt="Example of previous work #2" class="photos__photo2" />
-        <img src="" alt="Example of previous work #3" class="photos__photo3" />
-      </div>
     </div>
 
     <!-- About /////////////////////////////////// -->
     <div class="about">
+      <h1>Our Story</h1>
       <h2>Trusted by industries across Louisiana</h2>
       <p>
         "This is filler text. Lorem ipsum dolor sit amet, consectetur, sed do
-        eiusmod tempor incididunt ut bore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum." "Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut bore et dolore
-        magna aliqua.
+        eiusmod tempor incididunt ut bore et dolore magna aliqua.
+        <br />
+        <br />
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+        qui officia deserunt mollit anim id est laborum."
+        <br />
+        <br />
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut bore et dolore magna aliqua.
       </p>
     </div>
 
@@ -104,14 +132,22 @@
     <div class="estimate" id="get-estimate">
       <h1>Request A Free Estimate</h1>
       <form class="estimate__form" action="">
-        <label for="estimate__name">Name</label>
-        <input id="estimate__name" type="text" />
-        <label for="estimate__email">Email</label>
-        <input id="estimate__email" type="text" />
-        <label for="estimate__phone">Phone</label>
-        <input id="estimate__phone" type="text" />
-        <label for="estimate__comment">Comment</label>
-        <input id="estimate__comment" type="text" />
+        <div>
+          <label for="estimate__name">Name</label>
+          <input id="estimate__name" type="text" />
+        </div>
+        <div>
+          <label for="estimate__email">Email</label>
+          <input id="estimate__email" type="text" />
+        </div>
+        <div>
+          <label for="estimate__phone">Phone</label>
+          <input id="estimate__phone" type="text" />
+        </div>
+        <div>
+          <label for="estimate__comment">Comment</label>
+          <input id="estimate__comment" type="text" />
+        </div>
         <button>Request a Free Estimate</button>
       </form>
     </div>
