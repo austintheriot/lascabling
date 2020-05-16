@@ -39,14 +39,15 @@
         <img src="images/logo_big.png" alt="Big Logo" />
         <h1>"You can't afford NOT to hire us"</h1>
         <a class="button" href="#get-estimate__form">Request An Estimate</a>
-        <h3>
+        <h2 class="heading-emphasis">
           Over 30 years of experience designing and installing custom cabling
           solutions
-        </h3>
+        </h2>
       </div>
     </div>
 
     <!-- Services /////////////////////////////////// -->
+    <h1 class="services__pre-header">What We Do</h1>
     <div class="services" id="services">
       <div class="services__card">
         <img
@@ -56,8 +57,7 @@
         />
         <ul>
           <li>Fiber Optic Cabling</li>
-          <li>Categroy Cabling</li>
-          <li>Aerial Fiber</li>
+          <li>Category Cabling</li>
         </ul>
       </div>
       <div class="services__card">
@@ -67,12 +67,23 @@
           class="services__icon--server"
         />
         <ul>
-          <li>Data Centers</li>
-          <li>Communication Rooms</li>
+          <li>Communication Room<br />Design & Installation</li>
           <li>Conduit & Boring Installation</li>
         </ul>
       </div>
+      <!-- Fix These///////////////////////////////////// -->
       <div class="services__card">
+        <img
+          src="images/tv.svg"
+          alt="TV icon"
+          class="services__icon--tv"
+        />
+        <ul>
+          <li>TV/Monitor Installation</li>
+        </ul>
+      </div>
+    </div>
+      <div id="services__card--hidden" class="services__card">
         <img
           src="images/camera.svg"
           alt="camera icon"
@@ -80,15 +91,13 @@
         />
         <ul>
           <li>Security Cameras</li>
-          <li>TV Installation</li>
-          <li>Monitor Installation</li>
         </ul>
       </div>
     </div>
 
     <!-- Photos /////////////////////////////////// -->
     <div class="photos">
-      <h1>Lifetime guarantee on all new installations</h1>
+      <h2 class="heading-emphasis">Lifetime guarantee on all new installations</h1>
       <div class="photos__container">
         <img
           src="images/work1.jpg"
@@ -113,7 +122,7 @@
     <div class="about">
       <h1>Our Story</h1>
       <img src="/images/matt.jpg" alt="Picture of Matthew Theriot" />
-      <h3>Trusted by industries across Louisiana</h3>
+      <h2 class="heading-emphasis">Trusted by industries across Louisiana</h2>
       <p>
         "This is filler text. Lorem ipsum dolor sit amet, consectetur, sed do
         eiusmod tempor incididunt ut bore et dolore magna aliqua.
@@ -134,29 +143,41 @@
     <!-- Estimate /////////////////////////////////// -->
     <div class="estimate" id="get-estimate">
       <h1>Request A Free Estimate</h1>
-      <form id="get-estimate__form" class="estimate__form" action="">
+      <form
+        id="get-estimate__form"
+        class="estimate__form"
+        action="https://usebasin.com/f/e190135663e8"
+        method="post"
+      >
         <div>
           <label for="estimate__name">Name*</label>
-          <input id="estimate__name" type="text" required />
+          <input name="Name:" id="estimate__name" type="text" required />
         </div>
         <div>
           <label for="estimate__email">Email*</label>
-          <input id="estimate__email" type="text" required />
+          <input name="Email:" id="estimate__email" type="text" required />
         </div>
         <div>
           <label for="estimate__phone">Phone*</label>
-          <input id="estimate__phone" type="text" required />
+          <input
+            name="Phone Number:"
+            id="estimate__phone"
+            type="text"
+            required
+          />
         </div>
         <div>
           <label for="estimate__comment">Comment</label>
           <textarea
-            name="comments"
+            name="Comments:"
             id="estimate__comment"
             cols="30"
             rows="4"
           ></textarea>
         </div>
-        <button class="button button--submit">Request an Estimate</button>
+        <button class="button button--submit" type="submit">
+          Request an Estimate
+        </button>
       </form>
     </div>
 
