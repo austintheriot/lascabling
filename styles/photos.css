@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Setting Up Custom Properties ///////////////////////////////////////////////////////// */
+:root {
+  --serif: 'Source Serif Pro';
+  --sans: 'Source Sans Pro';
+  --dark-color: #393e41;
+  --medium-color: lightgray;
+  --light-color: #ffffff;
+  --pop-color: #173dde;
+  --shadow: 0rem 0rem 0.25rem rgba(0, 0, 0, 0.1),
+    0rem 0rem 1rem rgba(0, 0, 0, 0.15);
+  --h1-size: 2.75rem;
+  --h2-size: 2.25rem;
+  --h3-size: 1.25rem;
+  --body-size: 1rem;
+}
+
+/* Everything larger than 900px: increase the font size */
+@media (min-width: 900px) {
+  :root {
+    --h1-size: 4rem;
+    --h2-size: 3rem;
+    --h3-size: 1.5rem;
+    --body-size: 1.125rem;
+  }
+}
+/* General Styling ///////////////////////////////////////////////////////// */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--sans, sans-serif);
+  color: var(--dark-color);
+}
+
+/* Heading Fonts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--serif, serif);
+}
+
+h1 {
+  font-size: var(--h1-size);
+}
+
+h2 {
+  font-size: var(--h2-size);
+}
+
+h3 {
+  font-size: var(--h3-size);
+}
+
+body {
+  font-size: var(--body-size);
+}
+
+a {
+  text-decoration: none; /* Get rid of underlines */
+  color: var(--dark-color);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.button {
+  background-color: var(--pop-color);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: var(--light-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 22px;
+  display: block;
+  transition: all 100ms;
+  width: max-content;
+  height: max-content;
+  border: 2px solid var(--pop-color);
+}
+
+.button:hover {
+  background-color: var(--light-color);
+  color: var(--pop-color);
+}
+
+/* Specific Styling ///////////////////////////////////////////////////////// */
+
+/* Everything smaller than 900px */
+
+.photos__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: flex-start;
+}
+
+img {
+  display: block;
+  max-width: 400px;
+  width: 80%;
+  height: 80%; /* Was getting errors on mobile when leaving this blank */
+  margin: 2rem;
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+  flex-basis: auto;
+}
+
+/* Everything bigger than 900px */
+@media (min-width: 900px) {
+}

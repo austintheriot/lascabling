@@ -16,7 +16,7 @@
   --pop-color: #173dde;
   --shadow: 0rem 0rem 0.25rem rgba(0, 0, 0, 0.1),
     0rem 0rem 1rem rgba(0, 0, 0, 0.15);
-  --h1-size: 3rem;
+  --h1-size: 2.75rem;
   --h2-size: 2.25rem;
   --h3-size: 1.25rem;
   --body-size: 1rem;
@@ -79,7 +79,7 @@ ul {
 
 .button {
   background-color: var(--pop-color);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
   color: var(--light-color);
   padding: 0.5rem 1.5rem;
@@ -88,12 +88,12 @@ ul {
   transition: all 100ms;
   width: max-content;
   height: max-content;
+  border: 2px solid var(--pop-color);
 }
 
 .button:hover {
   background-color: var(--light-color);
   color: var(--pop-color);
-  border: 2px solid var(--pop-color);
 }
 
 /* Specific Styling ///////////////////////////////////////////////////////// */
@@ -102,14 +102,14 @@ ul {
 
 /* Header/Nav */
 .move-in {
-  transform: translateX(100vw);
+  transform: translateX(100%);
 }
 
 header {
   position: fixed;
   right: 100%;
   z-index: 10;
-  background-color: var(--dark-color);
+  background-color: var(--light-color);
   width: 100%;
   height: 100%;
   text-transform: uppercase;
@@ -119,23 +119,25 @@ header {
 nav {
   width: 100%;
   height: 100%;
-  border: 1px solid black;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
 }
 
 nav a {
   display: block;
-  color: var(--light-color);
-  font-size: 3rem;
+  color: var(--dark-color);
+  font-size: 2.5rem;
   align-self: center;
   justify-self: center;
-  padding: 1rem;
+  padding: 0.5rem;
+  transition: all 0.2s;
+  border-radius: 25px;
+  text-align: center;
 }
 
 nav a:hover {
-  scale: 1.2;
-  border: 2px solid var(--light-color);
+  transform: scale(1.2);
+  color: var(--pop-color);
 }
 
 /* Hamburger */
@@ -146,7 +148,9 @@ nav a:hover {
   z-index: 15;
   cursor: pointer;
   height: 2.5rem;
-  width: 2.5rem;
+  width: 3rem;
+  background-color: var(--light-color);
+  border-radius: 5px;
 }
 
 .hamburger__line {
@@ -156,13 +160,13 @@ nav a:hover {
   height: 0.3rem;
   border-radius: 0.25rem;
   background-color: var(--dark-color);
-  margin: 0.4rem 0;
+  margin: 0.4rem auto;
   cursor: pointer;
   transition: all 0.15s;
 }
 
 .hamburger-transformation {
-  background-color: var(--light-color);
+  background-color: var(--pop-color);
 }
 
 .hamburger-transformation--top {
@@ -178,9 +182,14 @@ nav a:hover {
 }
 
 /* Home */
+.home__container {
+  display: block;
+  height: 100%;
+  min-height: 600px;
+}
 
 .home__circle {
-  height: 100vh;
+  height: 100%;
   display: grid;
 }
 
@@ -191,27 +200,56 @@ nav a:hover {
 
 .home__container h1,
 .home__container h3 {
-  margin: 1rem auto;
-  width: calc(100% - 2rem);
+  margin: 2rem auto;
+  width: 80%;
   text-align: center;
 }
 
+.home__container h3 {
+  margin-top: 3rem;
+}
+
+.home__container h3::before,
+.home__container h3::after {
+  content: '';
+  display: block;
+  background-color: var(--medium-color);
+  height: 2px;
+  opacity: 0.75;
+  width: 50%;
+  margin: 1rem auto;
+}
+
 .home__container a {
-  margin: 2rem auto;
+  margin: 2rem auto 1rem auto;
 }
 
 /* Services */
 
+.services {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+}
+
 .services__card {
-  width: 250px;
-  height: 350px;
+  width: 225px;
+  height: 325px;
   box-shadow: var(--shadow);
-  margin: 3rem auto;
+  margin: 2rem;
   display: grid;
   grid-template-rows: 1fr 1fr;
   justify-items: center;
   align-items: center;
   text-align: center;
+  border-radius: 15px;
+  transition: all 0.2s;
+}
+
+.services__card:hover {
+  transform: scale(1.1);
 }
 
 .services__card img {
@@ -237,16 +275,28 @@ nav a:hover {
 
 /* Photos */
 
+.photos__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+}
+
 .photos h1 {
   text-align: center;
-  margin: 3rem;
+  font-size: 2rem;
+  margin: 2rem;
 }
 
 .photos img {
   display: block;
+  max-width: 400px;
   width: 80%;
-  margin: 2rem auto;
+  height: 80%; /* Was getting errors on mobile when leaving this blank */
+  margin: 1rem;
   box-shadow: var(--shadow);
+  border-radius: 5px;
+  flex-basis: auto;
 }
 
 .photos a {
@@ -254,14 +304,23 @@ nav a:hover {
 }
 
 /* About */
-/* Include Matt's Photo ////////////////////////////////////////////////////// */
+
+.about img {
+  display: block;
+  max-width: 350px;
+  width: 80%;
+  height: auto;
+  margin: 1rem auto;
+  box-shadow: var(--shadow);
+}
+
 .about {
   width: 100%;
   margin: 5rem auto;
 }
 
 .about h1,
-.about h2 {
+.about h3 {
   text-align: center;
   margin: 2rem 2rem;
 }
@@ -284,8 +343,8 @@ nav a:hover {
 form {
   display: block;
   box-shadow: var(--shadow);
-  height: 450px;
-  width: 75%;
+  height: 575px;
+  width: 90%;
   margin: 0 auto;
   border-radius: 15px;
   overflow: hidden;
@@ -293,42 +352,62 @@ form {
 
 label {
   display: block;
-  width: 75%;
+  width: 80%;
   margin: 2rem auto 0 auto;
   transition: all 0.2s;
 }
 
-input {
+input,
+textarea {
   display: block;
-  width: 75%;
-  margin: 0rem auto 1rem auto;
+  width: 80%;
+  margin: 0.5rem auto 1rem auto;
   border-radius: 3px;
   padding: 0.5rem;
   border: none;
   border-bottom: 2px solid var(--medium-color);
   transition: all 0.5s;
+  outline: none;
 }
 
 input:focus {
   border-bottom: 2px solid var(--pop-color);
 }
 
-button {
-  display: block;
-  width: 75%;
-  margin: 2rem auto;
-  border-radius: 3px;
-  padding: 0.5rem;
-  background-color: var(--light-color);
-  border: 2px solid var(--medium-color);
-  transition: border 0.5s;
-}
-
-button:hover {
+.button--submit {
+  font-size: 1rem;
+  margin: 3rem auto;
   border: 2px solid var(--pop-color);
 }
 
 /* Footer */
+.footer__logo {
+  display: block;
+  width: 80%;
+  margin: 3rem auto;
+}
+
+.footer__inline-icon {
+  display: block;
+  height: var(--body-size);
+}
+
+.footer__info {
+  width: 75%;
+  margin: 3rem auto;
+  display: grid;
+  grid-template: repeat(4, 1fr) / 2fr 3fr;
+  align-items: center;
+  grid-gap: 1rem;
+}
+
+.footer__inline-icon {
+  justify-self: right;
+}
+
+.footer__hours {
+  grid-column: 2 / 3;
+}
 
 /* Everything bigger than 900px */
 @media (min-width: 900px) {

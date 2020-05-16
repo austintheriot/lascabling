@@ -20,8 +20,10 @@
     <header>
       <nav>
         <a href="#home">Home</a>
-        <a href="#info">Info</a>
-        <a href="#get-estimate" class="links__get-estimate">Get Estimate</a>
+        <a href="#services">Services</a>
+        <a href="#get-estimate__form" class="links__get-estimate"
+          >Get Estimate</a
+        >
         <a href="#contact" class="links__contact">Contact</a>
       </nav>
     </header>
@@ -36,16 +38,16 @@
       <div class="home__circle">
         <img src="images/logo_big.png" alt="Big Logo" />
         <h1>"You can't afford NOT to hire us"</h1>
+        <a class="button" href="#get-estimate__form">Request An Estimate</a>
         <h3>
           Over 30 years of experience designing and installing custom cabling
           solutions
         </h3>
-        <a class="button" href="#estimate">Request An Estimate</a>
       </div>
     </div>
 
     <!-- Services /////////////////////////////////// -->
-    <div class="services" id="info">
+    <div class="services" id="services">
       <div class="services__card">
         <img
           src="images/cable.svg"
@@ -104,13 +106,14 @@
           class="photos__photo3"
         />
       </div>
-      <a href="#" class="button">See More Photos</a>
+      <a href="photos.html" class="button">See More Photos</a>
     </div>
 
     <!-- About /////////////////////////////////// -->
     <div class="about">
       <h1>Our Story</h1>
-      <h2>Trusted by industries across Louisiana</h2>
+      <img src="/images/matt.jpg" alt="Picture of Matthew Theriot" />
+      <h3>Trusted by industries across Louisiana</h3>
       <p>
         "This is filler text. Lorem ipsum dolor sit amet, consectetur, sed do
         eiusmod tempor incididunt ut bore et dolore magna aliqua.
@@ -131,64 +134,62 @@
     <!-- Estimate /////////////////////////////////// -->
     <div class="estimate" id="get-estimate">
       <h1>Request A Free Estimate</h1>
-      <form class="estimate__form" action="">
+      <form id="get-estimate__form" class="estimate__form" action="">
         <div>
-          <label for="estimate__name">Name</label>
-          <input id="estimate__name" type="text" />
+          <label for="estimate__name">Name*</label>
+          <input id="estimate__name" type="text" required />
         </div>
         <div>
-          <label for="estimate__email">Email</label>
-          <input id="estimate__email" type="text" />
+          <label for="estimate__email">Email*</label>
+          <input id="estimate__email" type="text" required />
         </div>
         <div>
-          <label for="estimate__phone">Phone</label>
-          <input id="estimate__phone" type="text" />
+          <label for="estimate__phone">Phone*</label>
+          <input id="estimate__phone" type="text" required />
         </div>
         <div>
           <label for="estimate__comment">Comment</label>
-          <input id="estimate__comment" type="text" />
+          <textarea
+            name="comments"
+            id="estimate__comment"
+            cols="30"
+            rows="4"
+          ></textarea>
         </div>
-        <button>Request a Free Estimate</button>
+        <button class="button button--submit">Request an Estimate</button>
       </form>
     </div>
 
     <!-- Footer /////////////////////////////////// -->
     <footer class="footer" id="contact">
-      <img src="" alt="Big Logo" />
       <div class="footer__info">
-        <div class="footer__contact">
-          <ul>
-            <li>
-              <img
-                src="images/phone.svg"
-                alt="phone icon"
-                class="inline-icon"
-              />
-              (337) 499-8950
-            </li>
-            <li>
-              <img
-                src="images/location.svg"
-                alt="location icon"
-                class="inline-icon"
-              />
-              P.O. Box 1149, Lake Charles, LA, 70602
-            </li>
-            <li>
-              <img
-                src="images/mail.svg"
-                alt="mail icon"
-                class="inline-icon"
-              />matt@lascabling.com
-            </li>
-          </ul>
-        </div>
-        <div class="footer__hours">
-          <ul>
-            <li>Monday-Friday: 8:00am-5:00pm</li>
-          </ul>
-        </div>
+        <img
+          src="images/phone.svg"
+          alt="phone icon"
+          class="footer__inline-icon"
+        />
+        <p>(337) 499-8950</p>
+        <img
+          src="images/location.svg"
+          alt="location icon"
+          class="footer__inline-icon"
+        />
+        <p>
+          P.O. Box 1149, <br />
+          Lake Charles, LA, 70602
+        </p>
+        <img
+          src="images/mail.svg"
+          alt="mail icon"
+          class="footer__inline-icon"
+        />
+        <p>matt@lascabling.com</p>
+        <p class="footer__hours">
+          Monday-Friday: <br />
+          8:00am-5:00pm
+        </p>
       </div>
+      <img src="images/logo_big.png" alt="Big Logo" class="footer__logo" />
     </footer>
   </body>
 </html>
