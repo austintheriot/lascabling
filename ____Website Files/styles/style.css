@@ -21,14 +21,6 @@
   --body-size: 1rem;
 }
 
-/* Everything larger than 900px: increase the font size */
-@media (min-width: 900px) {
-  :root {
-    --h1-size: 4rem;
-    --h2-size: 2rem;
-    --body-size: 1.125rem;
-  }
-}
 /* General Styling ///////////////////////////////////////////////////////// */
 
 html {
@@ -38,9 +30,9 @@ html {
 body {
   font-family: var(--sans, sans-serif);
   color: var(--dark-color);
+  font-size: var(--body-size);
 }
 
-/* Heading Fonts */
 h1,
 h2,
 h3,
@@ -60,8 +52,20 @@ h2 {
   font-size: var(--h2-size);
 }
 
-body {
-  font-size: var(--body-size);
+.heading-emphasis::before,
+.heading-emphasis::after {
+  content: '';
+  display: block;
+  background-color: var(--medium-color);
+  height: 2px;
+  opacity: 0.75;
+  width: 50%;
+  max-width: 250px;
+  margin: 1rem auto;
+}
+
+img {
+  display: block;
 }
 
 a {
@@ -75,11 +79,11 @@ ul {
 
 .button {
   background-color: var(--pop-color);
-  font-size: 1.25rem;
+  font-size: max(1.25rem, 2vw);
   text-transform: uppercase;
   color: var(--light-color);
   padding: 0.5rem 1.5rem;
-  border-radius: 22px;
+  border-radius: 50px;
   display: block;
   transition: all 100ms;
   width: max-content;
@@ -116,7 +120,7 @@ nav {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
 
 nav a {
@@ -131,6 +135,14 @@ nav a {
   text-align: center;
 }
 
+.links__get-estimate {
+  color: var(--pop-color);
+}
+
+.links__get-estimate:hover {
+  border: 1px solid var(--medium-color);
+}
+
 nav a:hover {
   transform: scale(1.2);
   color: var(--pop-color);
@@ -138,12 +150,12 @@ nav a:hover {
 
 /* Hamburger */
 .hamburger {
-  top: 0.25rem;
-  left: 0.25rem;
+  top: 0.5rem;
+  left: 0.5rem;
   position: fixed;
   z-index: 15;
   cursor: pointer;
-  height: 2.5rem;
+  height: 3rem;
   width: 3rem;
   background-color: var(--light-color);
   border-radius: 5px;
@@ -156,7 +168,7 @@ nav a:hover {
   height: 0.3rem;
   border-radius: 0.25rem;
   background-color: var(--dark-color);
-  margin: 0.4rem auto;
+  margin: 0.52rem auto;
   cursor: pointer;
   transition: all 0.15s;
 }
@@ -166,15 +178,15 @@ nav a:hover {
 }
 
 .hamburger-transformation--top {
-  transform: translate(0, 12px) rotate(-45deg);
+  transform: translate(0, 12.5px) rotate(-45deg);
 }
 
 .hamburger-transformation--middle {
-  transform: rotate(45deg);
+  transform: translate(1px, 0) rotate(45deg);
 }
 
 .hamburger-transformation--bottom {
-  transform: translate(0, -11px) rotate(45deg);
+  transform: translate(0, -14px) rotate(45deg);
 }
 
 /* Home */
@@ -200,21 +212,8 @@ nav a:hover {
   width: 80%;
 }
 
-.heading-emphasis::before,
-.heading-emphasis::after {
-  content: '';
-  display: block;
-  background-color: var(--medium-color);
-  height: 2px;
-  opacity: 0.75;
-  width: 50%;
-  margin: 1rem auto;
-}
-
 .home__container a {
   margin: 2rem auto 1rem auto;
-  font-size: max(1.25rem, 2vw);
-  border-radius: 50px;
 }
 
 /* Services */
@@ -247,13 +246,8 @@ nav a:hover {
   transition: all 0.5s;
 }
 
-.services__card:hover {
-  transform: scale(1.1);
-}
-
 .services__card img {
   margin-top: 2rem;
-  display: block;
 }
 
 .services__icon--cable {
@@ -290,7 +284,6 @@ nav a:hover {
 }
 
 .photos img {
-  display: block;
   max-width: 400px;
   width: 80%;
   height: 80%; /* Was getting errors on mobile when leaving this blank */
@@ -299,10 +292,6 @@ nav a:hover {
   border-radius: 5px;
   flex-basis: auto;
   transition: transform 0.5s;
-}
-
-.photos img:hover {
-  transform: scale(1.1);
 }
 
 .photos a {
@@ -314,12 +303,12 @@ nav a:hover {
 /* About */
 
 .about {
+  display: none; /* Hidden until complete */
   margin-top: 5rem;
   overflow: hidden;
 }
 
 .about img {
-  display: block;
   max-width: 350px;
   width: 80%;
   height: auto;
@@ -409,11 +398,14 @@ textarea:focus {
   grid-column: 2 / 3;
 }
 
-.footer__hours {
-  grid-column: 3 / 4;
+/* Photos Page */
+#photo-page__header {
+  top: 0; /* Weird bug, where this gets moved somehow */
 }
 
-/* Photos Page */
+.photo-page {
+  margin-top: 4rem;
+}
 
 .photo-page__heading {
   text-align: center;
@@ -422,29 +414,65 @@ textarea:focus {
 .photo-page__container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-content: flex-start;
+  justify-content: center;
 }
 
 .photo-page__container img {
-  display: block;
-  max-width: 400px;
-  width: 80%;
+  max-width: 300px;
   height: 80%; /* Was getting errors on mobile when leaving this blank */
   margin: 2rem;
   box-shadow: var(--shadow);
   border-radius: 5px;
-  flex-basis: auto;
   transition: transform 0.5s;
 }
 
-.photo-page__container img:hover {
-  transform: scale(1.1);
+#featured-image {
+  max-width: 700px;
 }
 
 /* Everything bigger than 900px */
 @media (min-width: 900px) {
+  /* General */
+
+  :root {
+    --h1-size: 4rem;
+    --h2-size: 2rem;
+    --body-size: 1.125rem;
+  }
+  .heading-emphasis::before,
+  .heading-emphasis::after {
+    max-width: 400px;
+  }
+
   /* Header/Nav */
+  .hamburger {
+    display: none;
+  }
+
+  header {
+    right: 0;
+    height: 50px;
+  }
+
+  nav {
+    grid-template: 1fr / repeat(5, 1fr);
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  nav a {
+    font-size: var(--body-size);
+  }
+
+  /* Services */
+  .services__card:hover {
+    transform: scale(1.1);
+  }
+
+  /* Photos */
+  .photos img:hover {
+    transform: scale(1.1);
+  }
 
   /* Footer */
   footer {
@@ -459,5 +487,17 @@ textarea:focus {
   .footer__info {
     grid-area: contact;
     border-left: 2px solid var(--medium-color);
+  }
+
+  /* Photos Page */
+  .photo-page {
+    margin-top: 4rem;
+  }
+  .photo-page__container img {
+    transition: transform 0.5s;
+  }
+
+  .photo-page__container img:hover {
+    transform: scale(1.2);
   }
 }
