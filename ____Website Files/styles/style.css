@@ -286,7 +286,7 @@ nav a:hover {
 .photos img {
   max-width: 400px;
   width: 80%;
-  height: 80%; /* Was getting errors on mobile when leaving this blank */
+  height: 100%; /* Was getting errors on mobile when leaving this blank */
   margin: 1rem;
   box-shadow: var(--shadow);
   border-radius: 5px;
@@ -386,9 +386,14 @@ textarea:focus {
   max-width: 500px;
   margin: 3rem auto;
   display: grid;
-  grid-template: repeat(4, 1fr) / 4fr 1fr 15fr;
+  grid-template: repeat(5, 1fr) / 4fr 1fr 15fr;
   align-items: center;
   grid-gap: 1rem;
+}
+
+.footer_license {
+  grid-column: 3 / 4;
+  font-size: 0.75rem;
 }
 
 .footer__inline-icon {
@@ -419,6 +424,7 @@ textarea:focus {
 
 .photo-page__container img {
   max-width: 300px;
+  width: 80%;
   height: 80%; /* Was getting errors on mobile when leaving this blank */
   margin: 2rem;
   box-shadow: var(--shadow);
