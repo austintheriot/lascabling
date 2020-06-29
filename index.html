@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Get a free estimate now from the best fiber optic and category cabling provider in Lake Charles, Lousiana. Providing cabling solutions for businesses across Louisiana.">
+    <meta name="keywords" content="cabling, Lake Charles, fiber, category cabling, structured cabling, Louisiana, Matthew Theriot, Matt Theriot, Valerie Theriot">
+    <title>Louisiana Structured Cabling</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="styles/style.css" type="text/css" />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Source+Serif+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/ScrollTrigger.min.js" defer></script>
+    <!-- JS -->
+    <script src="scripts/script.js" defer></script>
+  </head>
+  <body>
+    <!-- Header /////////////////////////////////// -->
+    <header>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#get-estimate" class="links__get-estimate"
+          >Get Estimate</a
+        >
+        <a href="#contact" class="links__contact">Contact</a>
+        <a href="photos.html" class="links__contact">Photos</a>
+      </nav>
+    </header>
+    <div class="hamburger">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </div>
+
+    <!-- Home Section /////////////////////////////////// -->
+    <section class="home__container" id="home">
+        <img src="images/logo_big.png" alt="Louisiana Structured Cabling LLC" />
+        <h1>"You can't afford NOT to hire us"</h1>
+        <a class="button" href="#get-estimate__form">Request An Estimate</a>
+    </section>
+
+   
+    <h2 class="heading-emphasis floating-header">
+      Over 30 years of experience designing and installing custom cabling
+      solutions
+    </h2>
+
+    <!-- Services /////////////////////////////////// -->
+    <h1 class="services__pre-header">What We Do</h1>
+    <section class="services" id="services">
+      <div class="services__card slide-in">
+        <img
+          src="images/cable.svg"
+          alt="cabling icon"
+          class="services__icon--cable"
+        />
+        <ul>
+          <li>Fiber Optic Cabling</li>
+          <li>Category Cabling</li>
+        </ul>
+      </div>
+      <div class="services__card slide-in">
+        <img
+          src="images/server.svg"
+          alt="server icon"
+          class="services__icon--server"
+        />
+        <ul>
+          <li>Communication Room<br />Design & Installation</li>
+          <li>Conduit & Boring Installation</li>
+        </ul>
+      </div>
+      <div class="services__card slide-in">
+        <img
+          src="images/tv.svg"
+          alt="TV icon"
+          class="services__icon--tv"
+        />
+        <ul>
+          <li>TV/Monitor Installation</li>
+        </ul>
+      </div>
+    </div>
+      <div id="services__card--hidden" class="services__card">
+        <img
+          src="images/camera.svg"
+          alt="camera icon"
+          class="services__icon--camera"
+        />
+        <ul>
+          <li>Security Cameras</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Photos /////////////////////////////////// -->
+    <section class="photos" id="photos">
+      <h2 class="heading-emphasis">Lifetime guarantee on all new installations</h1>
+      <div class="photos__container">
+        <img
+          src="images/front-page/photo1.jpg"
+          alt="Example of previous work #1"
+          class="photos__photo1 slide-in"
+        />
+        <img
+          src="images/front-page/photo2.jpg"
+          alt="Example of previous work #2"
+          class="photos__photo2 slide-in"
+        />
+        <img
+          src="images/front-page/photo3.jpg"
+          alt="Example of previous work #3"
+          class="photos__photo3 slide-in"
+        />
+      </div>
+      <a href="photos.html" class="button">See More Photos</a>
+    </section>
+
+    <!-- About /////////////////////////////////// -->
+    <section class="about">
+      <main>
+        <h1>About Us</h1>
+        <img src="images/front-page/matt.jpg" alt="Picture of Matthew Theriot" />
+        <h2 class="heading-emphasis">Trusted by industries across Louisiana</h2>
+        <p>
+          Louisiana Structured Cabling (LASC) provides fiber optic and category cabling services for businesses and industries across Louisiana. Founder and president of the company, Matthew Theriot, was born and raised in Lake Charles, Louisiana, where the LASC is based. He has had over 30 years of experience designing and installing custom cabling solutions for industries throughout the US. Now he brings that expertise to businesses in Louisiana.
+        </p>
+        <br />
+        <p>Louisiana Structured Cabling is the provider you can trust.</p>
+    </main>
+    </section>
+
+    <!-- Estimate /////////////////////////////////// -->
+    <section class="estimate" id="get-estimate">
+      <h1>Request A Free Estimate</h1>
+      <form
+        id="get-estimate__form"
+        class="estimate__form"
+        action="https://usebasin.com/f/e190135663e8"
+        method="post"
+      >
+        <div>
+          <label for="estimate__name">Name*</label>
+          <input name="Name:" id="estimate__name" type="text" required />
+        </div>
+        <div>
+          <label for="estimate__email">Email*</label>
+          <input name="Email:" id="estimate__email" type="text" required />
+        </div>
+        <div>
+          <label for="estimate__phone">Phone*</label>
+          <input
+            name="Phone Number:"
+            id="estimate__phone"
+            type="text"
+            required
+          />
+        </div>
+        <div>
+          <label for="estimate__comment">Comment</label>
+          <textarea
+            name="Comments:"
+            id="estimate__comment"
+            cols="30"
+            rows="4"
+          ></textarea>
+        </div>
+        <button class="button button--submit" type="submit">
+          Request an Estimate
+        </button>
+      </form>
+    </section>
+
+    <!-- Footer /////////////////////////////////// -->
+    <footer class="footer" id="contact">
+      <div class="footer__info">
+        <img
+          src="images/phone.svg"
+          alt="phone icon"
+          class="footer__inline-icon"
+        />
+        <p>Office: (337) 499-8950<br>
+        Fax: (337) 474-3899</p>
+        <img
+          src="images/location.svg"
+          alt="location icon"
+          class="footer__inline-icon"
+        />
+        <p>
+          P.O. Box 1149, <br />
+          Lake Charles, LA, 70602
+        </p>
+        <img
+          src="images/mail.svg"
+          alt="mail icon"
+          class="footer__inline-icon"
+        />
+        <p>
+          Matt@LASCabling.com<br>
+          Hunter@LASCabling.com<br>
+          Valerie@LASCabling.com</p>
+        <img
+          src="images/clock.svg"
+          alt="clock icon"
+          class="footer__inline-icon"
+        />
+        <p class="footer__hours">
+          Monday-Friday: <br />
+          8:00am-5:00pm
+        </p>
+        <p class="footer_license">Fully licensed and insured. <br>
+          Louisiana Contractors License #62337.<br>
+          Members of ISNetworld & DISA. </p>
+      </div>
+      <img src="images/logo_big.png" alt="Louisiana Structured Cabling LLC" class="footer__logo" />
+    </footer>
+  </body>
+</html>
