@@ -63,6 +63,9 @@ small {
 	font-size: 0.75rem;
 }
 
+address {
+	font-style: normal;
+}
 .heading-emphasis::before,
 .heading-emphasis::after {
 	content: '';
@@ -82,6 +85,10 @@ img {
 a {
 	text-decoration: none; /* Get rid of underlines */
 	color: var(--dark-color);
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 ul {
@@ -107,6 +114,7 @@ ul {
 .button:focus {
 	background-color: var(--light-color);
 	color: var(--pop-color);
+	text-decoration: none;
 }
 
 .button:focus {
@@ -148,18 +156,14 @@ nav a {
 	align-self: center;
 	justify-self: center;
 	padding: 0.5rem;
-	transition: all 0.2s;
 	border-radius: 25px;
 	text-align: center;
-}
-
-.links__get-estimate:hover {
-	border: 1px solid var(--medium-color);
+	transition: all 0.2s;
 }
 
 nav a:hover {
-	transform: scale(1.2);
 	color: var(--pop-color);
+	text-decoration: none;
 }
 
 /* Hamburger */
