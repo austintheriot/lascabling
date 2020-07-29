@@ -109,6 +109,11 @@ ul {
 	color: var(--pop-color);
 }
 
+.button:focus {
+	outline: 1px solid var(--pop-color);
+	outline-offset: 3px;
+}
+
 /* Specific Styling ///////////////////////////////////////////////////////// */
 
 /* Everything smaller than 900px */
@@ -380,7 +385,7 @@ input {
 
 input:focus,
 textarea:focus {
-	border-bottom: 1px solid var(--pop-color);
+	border: 1px solid var(--pop-color);
 }
 
 input:-moz-ui-invalid,
@@ -401,11 +406,6 @@ textarea {
 	font-size: 1rem;
 	margin: 3rem auto;
 	border: 2px solid var(--pop-color);
-}
-
-.estimate button:hover,
-.estimate button:focus {
-	outline: none;
 }
 
 input:disabled,
