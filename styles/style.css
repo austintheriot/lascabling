@@ -48,7 +48,7 @@ blockquote {
 
 blockquote {
 	font-size: var(--h1-size);
-	font-weight: bold;
+	font-weight: normal;
 }
 
 h2 {
