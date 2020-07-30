@@ -541,6 +541,10 @@ button:disabled {
 	}
 }
 
+body {
+	opacity: 1;
+}
+
 /* EXTRAS/////////////////////////////// */
 
 .hide {
