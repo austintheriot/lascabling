@@ -236,47 +236,51 @@ nav a:hover {
 
 /* Services */
 
-.services {
-	overflow: hidden;
+.services__flex-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	align-content: space-around;
 }
 
 .services__card {
 	background-color: var(--light-color);
-	width: 225px;
-	height: 325px;
+	width: 350px;
+	height: 600px;
 	box-shadow: var(--shadow);
 	margin: 2rem;
-	display: grid;
-	grid-template-rows: 1fr 1fr;
-	justify-items: center;
-	align-items: center;
-	text-align: center;
 	border-radius: 15px;
+	position: relative;
 }
 
 .services__card img {
-	margin-top: 2rem;
+	margin: 5rem auto 3rem auto;
+	height: 150px;
+}
+.services__card h3 {
+	margin: 3rem auto 2rem auto;
 }
 
-.services__icon--cable {
-	width: 75px;
+.services__card ul {
+	width: 100%;
+	margin: 2rem auto;
+	text-align: center;
+}
+
+/* .services__icon--cable {
+	width: 90px;
 }
 
 .services__icon--server {
-	height: 125px;
+	height: 150px;
 }
 
 .services__icon--tv {
-	width: 150px;
+	width: 175px;
 }
 
 .services__icon--camera {
 	width: 150px;
-}
+} */
 
 .services__card li {
 	margin: 1rem;
@@ -407,7 +411,6 @@ textarea {
 }
 
 .estimate button {
-	font-size: 1rem;
 	margin: 3rem auto;
 	border: 2px solid var(--pop-color);
 }
