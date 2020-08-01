@@ -1,4 +1,4 @@
-import key from './config.js';
+import API from './config.js';
 gsap.registerPlugin(ScrollTrigger);
 
 const hamburger = document.querySelector('.hamburger');
@@ -186,23 +186,20 @@ const inputHasErrors = () => {
 };
 
 const sendSubmission = async () => {
-	const response = await fetch(
-		'https://us-central1-austins-email-server.cloudfunctions.net/sendEmail/contactForm',
-		{
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
+	const response = await fetch(API.endPoint, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			Name: name.value,
+			Email: email.value,
+			Message: message.value,
+			_private: {
+				key: API.key,
 			},
-			body: JSON.stringify({
-				Name: name.value,
-				Email: email.value,
-				Message: message.value,
-				_private: {
-					key,
-				},
-			}),
-		}
-	);
+		}),
+	});
 	return response.json();
 };
 
