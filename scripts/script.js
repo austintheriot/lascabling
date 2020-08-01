@@ -187,7 +187,7 @@ const inputHasErrors = () => {
 
 const sendSubmission = async () => {
 	const response = await fetch(
-		'https://us-central1-austins-email-server.cloudfunctions.net/sendEmail',
+		'https://us-central1-austins-email-server.cloudfunctions.net/sendEmail/contactForm',
 		{
 			method: 'POST',
 			headers: {
