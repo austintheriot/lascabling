@@ -430,6 +430,8 @@ button:disabled {
 	width: 80%;
 	max-width: 600px;
 	margin: 3rem auto;
+	align-self: center;
+	margin-top: 150px;
 }
 
 .footer__info {
@@ -437,7 +439,7 @@ button:disabled {
 	max-width: 500px;
 	margin: 3rem auto;
 	display: grid;
-	grid-template: repeat(5, 1fr) / 4fr 1fr 15fr;
+	grid-template: repeat(6, 1fr) / 4fr 1fr 15fr;
 	align-items: center;
 	grid-gap: 1rem;
 }
@@ -447,10 +449,20 @@ button:disabled {
 }
 
 .footer__inline-icon {
-	display: block;
 	height: var(--body-size);
 	justify-self: center;
 	grid-column: 2 / 3;
+}
+
+.disa {
+	justify-self: center;
+	grid-column: 1 / 4;
+	margin-top: 25px;
+}
+
+.disa img {
+	display: block;
+	width: 75px;
 }
 
 /* Photos Page */
@@ -528,6 +540,7 @@ button:disabled {
 
 	.footer__logo {
 		grid-area: logo;
+		margin-top: 0;
 	}
 
 	.footer__info {
