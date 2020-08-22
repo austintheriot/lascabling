@@ -116,25 +116,6 @@ slideIns.forEach((el) => {
 	});
 });
 
-//lazy load
-const lazyLoad = document.querySelectorAll('[data-src]');
-lazyLoad.forEach((el) => {
-	gsap.from(el, {
-		scrollTrigger: {
-			trigger: el,
-			start: 'top-=500 bottom', //load 500px BEFORE the picture enters the viewport
-			onEnter: lazyLoadOnEnter.bind(this, el),
-			id: el.dataset.src, //identify scrolltriggers by their element's data-src attribute
-		},
-	});
-});
-
-function lazyLoadOnEnter(el) {
-	el.src = el.dataset.src;
-	//release Scrolltrigger for garbage collection
-	ScrollTrigger.getById(el.dataset.src).kill();
-}
-
 //FORM SUBMISSION/////////
 const form = document.getElementsByTagName('form')[0];
 const name = document.getElementById('name');
