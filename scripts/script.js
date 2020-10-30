@@ -119,6 +119,7 @@ slideIns.forEach((el) => {
 //FORM SUBMISSION/////////
 const form = document.getElementsByTagName('form')[0];
 const name = document.getElementById('name');
+const fake = document.getElementById('number');
 const email = document.getElementById('email');
 const message = document.getElementById('message');
 const button = document.querySelector('.estimate button');
@@ -126,6 +127,7 @@ const userMessage = document.getElementById('user-message');
 
 const disableElements = (disable) => {
 	name.disabled = disable;
+	fake.disabled = disable;
 	email.disabled = disable;
 	message.disabled = disable;
 	button.disabled = disable;
@@ -133,12 +135,20 @@ const disableElements = (disable) => {
 
 const clearInputs = () => {
 	name.value = '';
+	fake.value = '';
 	email.value = '';
 	message.value = '';
 };
 
 const inputHasErrors = () => {
-	console.log('checking if input has errors');
+	if (fake.value) {
+		fake.dataset.invalid = true;
+		userMessage.textContent =
+			'Please do not put any text in the second input field.';
+		return true;
+	} else {
+		fake.dataset.invalid = false;
+	}
 	if (!name.value) {
 		name.dataset.invalid = true;
 		userMessage.textContent = 'Please provide a name before submitting.';
@@ -185,7 +195,6 @@ const sendSubmission = async () => {
 };
 
 name.addEventListener('change', (e) => {
-	console.log('checking if input has errors');
 	if (!e.target.value) {
 		name.dataset.invalid = true;
 		userMessage.textContent = 'Please provide a name before submitting.';
@@ -199,8 +208,23 @@ name.addEventListener('change', (e) => {
 	}
 });
 
+fake.addEventListener('change', (e) => {
+	if (e.target.value) {
+		fake.dataset.invalid = true;
+		userMessage.textContent =
+			'Please do not put any text in the second input field.';
+	} else {
+		if (
+			userMessage.textContent ===
+			'Please do not put any text in the second input field.'
+		) {
+			userMessage.textContent = '';
+		}
+		fake.dataset.invalid = false;
+	}
+});
+
 email.addEventListener('change', (e) => {
-	console.log('checking if input has errors');
 	if (!e.target.value) {
 		email.dataset.invalid = true;
 		userMessage.textContent = 'Please provide an email before submitting.';
@@ -222,8 +246,9 @@ email.addEventListener('change', (e) => {
 	}
 });
 
-form.addEventListener('submit', (e) => {
+const onSubmit = (e) => {
 	e.preventDefault();
+
 	//validate user input
 	if (inputHasErrors()) {
 		return;
@@ -248,4 +273,6 @@ form.addEventListener('submit', (e) => {
 			userMessage.textContent =
 				'Sorry, there was an error processing your submission. Please try again later.';
 		});
-});
+};
+
+form.addEventListener('submit', onSubmit);
