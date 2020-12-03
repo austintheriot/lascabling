@@ -113,7 +113,7 @@
 			defer
 		></script>
 		<!-- JS -->
-		<script src="scripts/script.js" defer></script>
+		<script src="./scripts/script.js" defer></script>
 	</head>
 	<body>
 		<!-- Header /////////////////////////////////// -->
@@ -250,6 +250,7 @@
 					type="text"
 					aria-required="true"
 					data-invalid="false"
+					required
 				/>
 				<label for="number" class="see-last-class">Phone Number:</label>
 				<input
@@ -257,7 +258,7 @@
 					id="number"
 					class=""
 					name="Phone Number"
-					type="text"
+					type="tel"
 					aria-required="false"
 					data-invalid="false"
 				/>
@@ -265,7 +266,8 @@
 				<input
 					id="email"
 					name="Email"
-					type="text"
+					type="email"
+					required
 					aria-required="true"
 					data-invalid="false"
 				/>
