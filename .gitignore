@@ -5,3 +5,4 @@ _construction/
 .cache/
 dist/
 node_modules/
+lib/
