@@ -75,11 +75,9 @@ function hamburgerClickHandler() {
 	if (!menuOpen) {
 		disableScroll();
 		menuOpen = true;
-		console.log('scroll disabled (handler)');
 	} else {
 		enableScroll();
 		menuOpen = false;
-		console.log('scroll enabled (handler)');
 	}
 }
 
@@ -92,7 +90,6 @@ function closeNavBar() {
 	hamburgerLines[1].classList.remove('hamburger-transformation--middle');
 	hamburgerLines[2].classList.remove('hamburger-transformation--bottom');
 	enableScroll();
-	console.log('scroll enabled (resize)');
 }
 
 function windowResizeHandler() {
