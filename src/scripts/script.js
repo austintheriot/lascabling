@@ -124,6 +124,14 @@ const message = document.getElementById('message');
 const button = document.querySelector('.estimate button');
 const userMessage = document.getElementById('user-message');
 
+//Error messages
+const ERROR_EMAIL_INVALID = 'Please enter a valid email address.';
+const ERROR_EMAIL_NONE = 'Please provide an email before submitting.';
+const ERROR_NAME_NONE = 'Please provide a name before submitting.';
+const ERROR_FAKE_INPUT =
+	'Please do not input any text in the phone number input field.';
+const ERROR_MESSAGE_TOO_SHORT = 'Please write a longer message. Thank you!';
+
 const disableElements = (disable) => {
 	name.disabled = disable;
 	fake.disabled = disable;
@@ -142,22 +150,38 @@ const clearInputs = () => {
 const inputHasErrors = () => {
 	if (fake.value) {
 		fake.dataset.invalid = true;
-		userMessage.textContent =
-			'Please do not put any text in the second input field.';
+		userMessage.textContent = ERROR_FAKE_INPUT;
 		return true;
 	} else {
 		fake.dataset.invalid = false;
 	}
 	if (!name.value) {
 		name.dataset.invalid = true;
-		userMessage.textContent = 'Please provide a name before submitting.';
+		userMessage.textContent = ERROR_NAME_NONE;
 		return true;
 	} else {
 		name.dataset.invalid = false;
 	}
+
+	//Spam filter for message
+	let messageArray = message.value ? message.value.trim().split(' ') : [''];
+	if (
+		message.value &&
+		messageArray.length === 1 &&
+		messageArray[0] !== 'Hello' &&
+		messageArray[0] !== 'Hi' &&
+		messageArray[0] !== 'Hey'
+	) {
+		message.dataset.invalid = true;
+		userMessage.textContent = ERROR_MESSAGE_TOO_SHORT;
+		return true;
+	} else {
+		name.dataset.invalid = false;
+	}
+
 	if (!email.value) {
 		email.dataset.invalid = true;
-		userMessage.textContent = 'Please provide an email before submitting.';
+		userMessage.textContent = ERROR_EMAIL_INVALID;
 		return true;
 	}
 	if (
@@ -166,7 +190,7 @@ const inputHasErrors = () => {
 		)
 	) {
 		email.dataset.invalid = true;
-		userMessage.textContent = 'Please enter a valid email address.';
+		userMessage.textContent = ERROR_EMAIL_INVALID;
 		return true;
 	} else {
 		email.dataset.invalid = false;
@@ -196,11 +220,9 @@ const sendSubmission = async () => {
 name.addEventListener('change', (e) => {
 	if (!e.target.value) {
 		name.dataset.invalid = true;
-		userMessage.textContent = 'Please provide a name before submitting.';
+		userMessage.textContent = ERROR_NAME_NONE;
 	} else {
-		if (
-			userMessage.textContent === 'Please provide a name before submitting.'
-		) {
+		if (userMessage.textContent === ERROR_NAME_NONE) {
 			userMessage.textContent = '';
 		}
 		name.dataset.invalid = false;
@@ -210,13 +232,9 @@ name.addEventListener('change', (e) => {
 fake.addEventListener('change', (e) => {
 	if (e.target.value) {
 		fake.dataset.invalid = true;
-		userMessage.textContent =
-			'Please do not put any text in the second input field.';
+		userMessage.textContent = ERROR_FAKE_INPUT;
 	} else {
-		if (
-			userMessage.textContent ===
-			'Please do not put any text in the second input field.'
-		) {
+		if (userMessage.textContent === ERROR_FAKE_INPUT) {
 			userMessage.textContent = '';
 		}
 		fake.dataset.invalid = false;
@@ -226,20 +244,42 @@ fake.addEventListener('change', (e) => {
 email.addEventListener('change', (e) => {
 	if (!e.target.value) {
 		email.dataset.invalid = true;
-		userMessage.textContent = 'Please provide an email before submitting.';
+		userMessage.textContent = ERROR_EMAIL_NONE;
 	} else if (
 		!email.value.match(
 			/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
 		)
 	) {
 		email.dataset.invalid = true;
-		userMessage.textContent = 'Please enter a valid email address.';
+		userMessage.textContent = ERROR_EMAIL_INVALID;
 	} else {
 		email.dataset.invalid = false;
 		if (
-			userMessage.textContent === 'Please enter a valid email address.' ||
-			userMessage.textContent === 'Please provide an email before submitting.'
+			userMessage.textContent === ERROR_EMAIL_INVALID ||
+			userMessage.textContent === ERROR_EMAIL_NONE
 		) {
+			userMessage.textContent = '';
+		}
+	}
+});
+
+message.addEventListener('change', () => {
+	//Spam filter for message
+	let messageArray = message.value ? message.value.trim().split(' ') : [''];
+	console.log(messageArray);
+	if (
+		message.value &&
+		messageArray.length === 1 &&
+		messageArray[0].toLowerCase() !== 'hello' &&
+		messageArray[0].toLowerCase() !== 'hi' &&
+		messageArray[0].toLowerCase() !== 'hey'
+	) {
+		message.dataset.invalid = true;
+		userMessage.textContent = ERROR_MESSAGE_TOO_SHORT;
+		return true;
+	} else {
+		name.dataset.invalid = false;
+		if ((userMessage.textContent = ERROR_MESSAGE_TOO_SHORT)) {
 			userMessage.textContent = '';
 		}
 	}
