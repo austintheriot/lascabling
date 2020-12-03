@@ -4,8 +4,8 @@
 	"description": "Business landing page for Louisiana Structured Cabling, LLC",
 	"main": "src/index.html",
 	"scripts": {
-		"start": "parcel src/index.html --public-url /",
-		"build": "parcel build --no-source-maps src/index.html --public-url /",
+		"start": "parcel src/*.html",
+		"build": "parcel build --no-source-maps src/*.html",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
