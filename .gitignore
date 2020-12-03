@@ -1,8 +1,16 @@
+node_modules/
+.cache/
+
+# Babel
+lib/
+
+# Parcel folders
+dist/
+build/
+serve/
+
+# My Folders/Files
 config.js
 notes.txt
 _screenshots/
 _construction/
-.cache/
-dist/
-node_modules/
-lib/

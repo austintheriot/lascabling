@@ -4,8 +4,8 @@
 	"description": "Business landing page for Louisiana Structured Cabling, LLC",
 	"main": "src/index.html",
 	"scripts": {
-		"start": "parcel src/*.html",
-		"build": "parcel build --no-source-maps src/*.html",
+		"start": "parcel src/*.html --out-dir serve",
+		"build": "parcel build --no-source-maps src/*.html --out-dir build",
 		"babel": "babel src -d lib"
 	},
 	"repository": {
@@ -17,11 +17,15 @@
 	"bugs": {
 		"url": "https://github.com/austintheriot/lascabling/issues"
 	},
+	"browserslist": "> 0.25%, not dead",
 	"homepage": "https://github.com/austintheriot/lascabling#readme",
 	"devDependencies": {
 		"@babel/cli": "^7.12.8",
 		"@babel/core": "^7.12.9",
 		"@babel/preset-env": "^7.12.7",
 		"cssnano": "^4.1.10"
+	},
+	"dependencies": {
+		"core-js": "^3.8.0"
 	}
 }
