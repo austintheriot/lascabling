@@ -17,5 +17,8 @@
 	"bugs": {
 		"url": "https://github.com/austintheriot/lascabling/issues"
 	},
-	"homepage": "https://github.com/austintheriot/lascabling#readme"
+	"homepage": "https://github.com/austintheriot/lascabling#readme",
+	"devDependencies": {
+		"cssnano": "^4.1.10"
+	}
 }

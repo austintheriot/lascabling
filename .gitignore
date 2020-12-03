@@ -4,3 +4,4 @@ _screenshots/
 _construction/
 .cache/
 dist/
+node_modules/
