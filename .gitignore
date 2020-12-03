@@ -2,3 +2,5 @@ config.js
 notes.txt
 _screenshots/
 _construction/
+.cache/
+dist/
