@@ -1,0 +1,19 @@
+{
+  "name": "lascabling",
+  "version": "1.0.0",
+  "description": "Business landing page for Louisiana Structured Cabling, LLC",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austintheriot/lascabling.git"
+  },
+  "author": "Austin Theriot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/austintheriot/lascabling/issues"
+  },
+  "homepage": "https://github.com/austintheriot/lascabling#readme"
+}
