@@ -97,8 +97,7 @@ ul {
 
 .button {
 	background-color: var(--pop-color);
-	font-size: max(1.25rem, 2vw);
-	text-transform: uppercase;
+	font-size: 1.25rem;
 	color: var(--light-color);
 	padding: 0.5rem 1.5rem;
 	border-radius: 5px;
@@ -306,8 +305,6 @@ nav a:hover {
 
 .photos a {
 	margin: 4rem auto;
-	font-size: max(1.25rem, 2vw);
-	border-radius: 5px;
 }
 
 /* About */
@@ -325,6 +322,7 @@ nav a:hover {
 	height: auto;
 	margin: 1rem auto;
 	box-shadow: var(--shadow);
+	border-radius: 5px;
 }
 
 .about p {
