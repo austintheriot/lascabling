@@ -433,6 +433,10 @@ button:disabled {
 	margin-top: 150px;
 }
 
+.footer__logo img {
+	width: 100%;
+}
+
 .footer__info {
 	width: 75%;
 	max-width: 500px;
