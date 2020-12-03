@@ -1,3 +1,5 @@
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 gsap.registerPlugin(ScrollTrigger);
 
 const hamburger = document.querySelector('.hamburger');
