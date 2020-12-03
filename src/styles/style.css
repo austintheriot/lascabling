@@ -97,11 +97,11 @@ ul {
 
 .button {
 	background-color: var(--pop-color);
-	font-size: max(1.5rem, 2vw);
+	font-size: max(1.25rem, 2vw);
 	text-transform: uppercase;
 	color: var(--light-color);
 	padding: 0.5rem 1.5rem;
-	border-radius: 50px;
+	border-radius: 5px;
 	display: block;
 	transition: all 100ms;
 	width: max-content;
@@ -156,7 +156,6 @@ nav a {
 	align-self: center;
 	justify-self: center;
 	padding: 0.5rem;
-	border-radius: 25px;
 	text-align: center;
 	transition: all 0.2s;
 }
@@ -248,7 +247,7 @@ nav a:hover {
 	height: 600px;
 	box-shadow: var(--shadow);
 	margin: 2rem;
-	border-radius: 15px;
+	border-radius: 5px;
 	position: relative;
 }
 
@@ -308,7 +307,7 @@ nav a:hover {
 .photos a {
 	margin: 4rem auto;
 	font-size: max(1.25rem, 2vw);
-	border-radius: 25px;
+	border-radius: 5px;
 }
 
 /* About */
@@ -350,7 +349,7 @@ form {
 	width: 90%;
 	max-width: 600px;
 	margin: 0 auto;
-	border-radius: 15px;
+	border-radius: 5px;
 	overflow: hidden;
 }
 
