@@ -168,9 +168,9 @@ const inputHasErrors = () => {
 	if (
 		message.value &&
 		messageArray.length === 1 &&
-		messageArray[0] !== 'Hello' &&
-		messageArray[0] !== 'Hi' &&
-		messageArray[0] !== 'Hey'
+		messageArray[0].toLowerCase() !== 'hello' &&
+		messageArray[0].toLowerCase() !== 'hi' &&
+		messageArray[0].toLowerCase() !== 'hey'
 	) {
 		message.dataset.invalid = true;
 		userMessage.textContent = ERROR_MESSAGE_TOO_SHORT;
