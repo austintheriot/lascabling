@@ -5,7 +5,7 @@
 	"main": "src/index.html",
 	"scripts": {
 		"clean": "node utils/clean.js",
-		"start": "parcel src/*.html --out-dir serve",
+		"serve": "parcel serve src/*.html --out-dir serve",
 		"build": "parcel build --no-source-maps src/*.html --out-dir build",
 		"babel": "babel src -d lib"
 	},
