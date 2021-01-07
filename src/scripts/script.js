@@ -206,9 +206,9 @@ const sendSubmission = async () => {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
-			Name: name.value,
-			Email: email.value,
-			Message: message.value,
+			name: name.value,
+			email: email.value,
+			message: message.value,
 			_private: {
 				key: API.key,
 			},
