@@ -266,7 +266,6 @@ email.addEventListener('change', (e) => {
 message.addEventListener('change', () => {
 	//Spam filter for message
 	let messageArray = message.value ? message.value.trim().split(' ') : [''];
-	console.log(messageArray);
 	if (
 		message.value &&
 		messageArray.length === 1 &&
