@@ -495,8 +495,8 @@ button:disabled {
 	border-radius: 5px;
 }
 
-#featured-image {
-	max-width: 700px;
+.featured-image {
+	max-width: 700px !important;
 }
 
 /* Everything bigger than 900px */
